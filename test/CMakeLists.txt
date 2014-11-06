@@ -1,5 +1,7 @@
-rock_testsuite(
-    unit_test test.cpp
+rock_testsuite(unit_test
+    test.cpp
+    test_Combinatorics.cpp
+    DEPS numeric
     DEPS_PKGCONFIG base-types)
 
 #do not build this test if gsl is not installed 
