@@ -1,6 +1,5 @@
-
-#ifndef __FITPOLYNOM_H 
-#define __FITPOLYNOM_H
+#ifndef BASE_NUMERIC_FITPOLYNOM_HPP__
+#define BASE_NUMERIC_FITPOLYNOM_HPP__
 
 #include <math.h>
 #include <vector>
@@ -143,4 +142,4 @@ namespace numeric
     }
 
 };
-#endif
+#endif // BASE_NUMERIC_FITPOLYNOM_HPP__

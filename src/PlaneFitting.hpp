@@ -175,6 +175,5 @@ public:
     }
 };
 
-}
-
-#endif
+} // end namespace base
+#endif // BASE_NUMERIC_PLANEFITTING_HPP__

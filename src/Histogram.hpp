@@ -1,5 +1,5 @@
-#ifndef BASE_NUMERIC_HISTOGRAM__
-#define BASE_NUMERIC_HISTOGRAM__
+#ifndef BASE_NUMERIC_HISTOGRAM_HPP__
+#define BASE_NUMERIC_HISTOGRAM_HPP__
 
 #include <algorithm>
 
@@ -133,6 +133,5 @@ struct Histogram : public Buckets<size_t>
     }
 };
 
-}
-
-#endif
+} // end namespace numeric
+#endif // BASE_NUMERIC_HISTOGRAM_HPP__

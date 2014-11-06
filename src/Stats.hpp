@@ -1,5 +1,5 @@
-#ifndef BASE_STATS_HPP__
-#define BASE_STATS_HPP__
+#ifndef BASE_NUMERICS_STATS_HPP__
+#define BASE_NUMERICS_STATS_HPP__
 
 #include <Eigen/Core>
 #include <base/eigen.h>
@@ -322,5 +322,4 @@ public:
 
 
 } // namespace base
-
-#endif
+#endif // BASE_NUMERICS_STATS_HPP__

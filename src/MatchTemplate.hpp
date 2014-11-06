@@ -1,6 +1,5 @@
-
-#ifndef __MATCH_TEMPLATE
-#define __MATCH_TEMPLATE 
+#ifndef BASE_NUMERIC_MATCH_TEMPLATE_HPP__
+#define BASE_NUMERIC_MATCH_TEMPLATE_HPP__
 
 #include <vector>
 #include <limits>
@@ -83,5 +82,5 @@ namespace numeric
           }
           return temp;
       }
-};
-#endif
+} // end namespace numeric
+#endif // BASE_NUMERIC_MATCH_TEMPLATE_HPP__
