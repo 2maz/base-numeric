@@ -116,4 +116,11 @@ std::string IntegerPartitioning::toString() const
     return ss.str();
 }
 
+std::string IntegerPartitioning::toString(const IntegerPartition& partition)
+{
+    std::stringstream ss;
+    ss << partition;
+    return ss.str();
+}
+
 } // end namespace numeric

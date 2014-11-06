@@ -49,6 +49,12 @@ public:
     std::string toString() const;
 
     /**
+     * Convert an integer partition to a string
+     * \return String representation of an integer partition
+     */
+    static std::string toString(const IntegerPartition& partition);
+
+    /**
      * Retrieve the partitions map
      * \return partition map
      */
