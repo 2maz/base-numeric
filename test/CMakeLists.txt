@@ -1,6 +1,7 @@
 rock_testsuite(unit_test
     test.cpp
     test_Combinatorics.cpp
+    test_IntegerPartitioning.cpp
     DEPS numeric
     DEPS_PKGCONFIG base-types)
 
