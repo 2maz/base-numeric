@@ -55,6 +55,12 @@ public:
     static std::string toString(const IntegerPartition& partition);
 
     /**
+     * Convert an integer partition to a string
+     * \return String representation of an integer partition
+     */
+    static std::string toString(const std::vector<IntegerPartition>& partitionList);
+
+    /**
      * Retrieve the partitions map
      * \return partition map
      */
@@ -69,6 +75,7 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& os, const IntegerPartition& list);
+std::ostream& operator<<(std::ostream& os, const std::vector<IntegerPartition>& list);
 
 } // end namespace numeric
 #endif // BASE_NUMERIC_INTEGER_PARTITIONING_HPP__

@@ -16,10 +16,26 @@ size_t IntegerPartitioning::multiplicity(const IntegerPartition& partition, int 
     return count;
 }
 
-std::ostream& operator<<(std::ostream& os, const std::vector<int>& list)
+std::ostream& operator<<(std::ostream& os, const IntegerPartition& list)
 {
     os << "[";
     std::vector<int>::const_iterator cit = list.begin();
+    for(; cit != list.end(); ++cit)
+    {
+        os << *cit;
+        if(cit + 1 != list.end())
+        {
+            os << ",";
+        }
+    }
+    os << "]";
+    return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const std::vector< IntegerPartition >& list)
+{
+    os << "[";
+    std::vector<IntegerPartition>::const_iterator cit = list.begin();
     for(; cit != list.end(); ++cit)
     {
         os << *cit;
@@ -120,6 +136,13 @@ std::string IntegerPartitioning::toString(const IntegerPartition& partition)
 {
     std::stringstream ss;
     ss << partition;
+    return ss.str();
+}
+
+std::string IntegerPartitioning::toString(const std::vector<IntegerPartition>& partitionList)
+{
+    std::stringstream ss;
+    ss << partitionList;
     return ss.str();
 }
 
