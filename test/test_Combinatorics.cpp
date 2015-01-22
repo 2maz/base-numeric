@@ -4,6 +4,8 @@
 
 using namespace numeric;
 
+BOOST_AUTO_TEST_SUITE(combinatorics)
+
 BOOST_AUTO_TEST_CASE(it_should_compute_binomial_coefficient)
 {
     BOOST_REQUIRE_MESSAGE( 0 == binomialCoefficient(0,1), "1 out of 0 should be 0");
@@ -182,3 +184,5 @@ BOOST_AUTO_TEST_CASE(it_should_generate_combinations)
     }
 
 }
+
+BOOST_AUTO_TEST_SUITE_END()
