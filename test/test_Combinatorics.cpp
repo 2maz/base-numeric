@@ -150,7 +150,7 @@ BOOST_AUTO_TEST_CASE(it_should_generate_combinations)
         }
 
         Combination<char> combination(input, 2, EXACT);
-        int count = 0;
+        size_t count = 0;
         do
         {
             std::vector<char> current = combination.current();
@@ -171,7 +171,7 @@ BOOST_AUTO_TEST_CASE(it_should_generate_combinations)
         }
 
         Combination<char> combination(input, 2, EXACT);
-        int count = 0;
+        size_t count = 0;
         do
         {
             std::vector<char> current = combination.current();

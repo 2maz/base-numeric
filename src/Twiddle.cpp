@@ -95,7 +95,7 @@ void Twiddle::init(int m, int n)
     p[1] = 1;
 
   // Set irrelevant items to 0
-  size_t pos = 0;
+  int pos = 0;
   for(; pos != n-m; ++pos)
   {
       b[pos] = 0;
