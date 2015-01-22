@@ -13,11 +13,15 @@ namespace numeric {
 typedef std::vector<int> IntegerPartition;
 
 /**
+ * \class IntegerPartitioning
+ * \brief Computer integer partitions
+ * \details
  * Utitility class that allows to compute all integer partitions of a given integer
- * It uses the existing algorithm a Jerome Kelleher:
+ * It uses the existing algorithm of Jerome Kelleher:
  * "Generating All Partitions: A Comparison Of Two Encodings", (Kelleher and O'Sullivan, 2009)
+ * \see http://jeromekelleher.net/partitions.php
  *
- \beginverbatim
+ \verbatim
  IntegerPartitioning ip;
  // compute all partitions: [1,1,1,1,1],[2,1,1,1], ... [5]
  ip.compute(5);

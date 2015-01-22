@@ -34,4 +34,5 @@ uint64_t binomialCoefficient(uint32_t n, uint32_t k)
     }
     return result;
 }
+
 } // end namespace numeric

@@ -25,6 +25,22 @@ inline uint64_t factorial(uint32_t n)
 // see http://de.wikipedia.org/wiki/Binomialkoeffizient for details
 uint64_t binomialCoefficient(uint32_t n, uint32_t k);
 
+/**
+ * \brief Create permutation on a list of given types
+ * \verbatim
+ #include <numeric/Combinatorics.hpp>
+ ...
+ std::string content = "abcd";
+ std::vector<char> characterList(content.begin(), content.end());
+
+ numeric::Permutation<char> permutation(characterList);
+ do {
+     std::vector<char> current = permutation.current();
+     std::string s(current.begin(), current.end());
+     std::cout << "Current permutation: " << s << std::endl;
+ } while(permutation.next());
+ \endverbatim
+ */
 template <class T>
 class Permutation
 {
@@ -37,6 +53,10 @@ private:
 
 public:
 
+    /**
+     * Default constructor for permutation of a given list of items
+     * \param items List of items to compute all permutations for
+     */
     Permutation(const std::vector<T> items)
         : mItems(items)
         , mInitalized(false)
@@ -44,16 +64,28 @@ public:
         std::sort(mItems.begin(), mItems.end());
     }
 
+    /**
+     * Retrieve the next permutation
+     * \return True if there is a next permutation, False otherwise
+     */
     bool next()
     {
         return std::next_permutation(mItems.begin(), mItems.end());
     }
 
+    /**
+     * Retrieve the current permutated list of items
+     * \return The permutated items
+     */
     const ItemList& current() const
     {
         return mItems;
     }
 
+    /**
+     * Get the total number of permutations
+     * \return Number of permutations
+     */
     size_t numberOfPermutations() const { return factorial(mItems.size()); }
 };
 
@@ -64,9 +96,10 @@ extern std::map<Mode, std::string> ModeTxt;
  * \brief Combination of a unique item map Binomialcoefficient (n k)
  * \tparam Type of items that should be combined
  * \details A code example
- * \verbatim 
+ * \verbatim
    #include <vector>
    #include <string>
+   #include <numeric/Combinatorics.hpp>
 
    using namespace numerics;
 

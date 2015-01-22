@@ -8,12 +8,12 @@
 namespace numeric {
 
 /**
- * Allow combinatorics on a given set of limited resources
+ * \brief Compute combinatorics on a given set of limited but typed resources
  *
  * Use integers to compute the core combinatorics, i.e. avoiding the 
  * computational effort for comparison of custom objects
  *
- \beginverbatim
+ \verbatim
  using namespace numeric;
  std::map<std::string, size_t> items;
  items["item-1"] = 2;
