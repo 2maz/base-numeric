@@ -8,8 +8,10 @@ rock_library(numeric
         MatchTemplate.hpp
         PlaneFitting.hpp
         Stats.hpp
+        Twiddle.hpp
     SOURCES
         Combinatorics.cpp
         IntegerPartitioning.cpp
+        Twiddle.cpp
     DEPS_PKGCONFIG base-types base-lib
 )
