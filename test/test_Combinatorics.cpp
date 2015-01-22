@@ -8,10 +8,11 @@ BOOST_AUTO_TEST_SUITE(combinatorics)
 
 BOOST_AUTO_TEST_CASE(it_should_compute_binomial_coefficient)
 {
-    BOOST_REQUIRE_MESSAGE( 0 == binomialCoefficient(0,1), "1 out of 0 should be 0");
-    BOOST_REQUIRE_MESSAGE( 1 == binomialCoefficient(10,10), "n out of n should be 1");
-    BOOST_REQUIRE_MESSAGE( 10 == binomialCoefficient(10,1), "1 out of n should be n");
-    BOOST_REQUIRE_MESSAGE( 220 == binomialCoefficient(12,3), "3 out of 12 should be 220: was " << binomialCoefficient(12,3));
+    BOOST_REQUIRE_MESSAGE( 1 ==   static_cast<uint64_t>( boost::math::binomial_coefficient<double>(1,1)  ), "1 out of 1 should be 1");
+    BOOST_REQUIRE_MESSAGE( 1 ==   static_cast<uint64_t>( boost::math::binomial_coefficient<double>(10,10)), "n out of n should be 1");
+    BOOST_REQUIRE_MESSAGE( 10 ==  static_cast<uint64_t>( boost::math::binomial_coefficient<double>(10,1) ), "1 out of n should be n");
+    BOOST_REQUIRE_MESSAGE( 220 == static_cast<uint64_t>( boost::math::binomial_coefficient<double>(12,3) ), "3 out of 12 should be 220");
+    BOOST_REQUIRE_THROW(static_cast<uint64_t>( boost::math::binomial_coefficient<double>(3000,1500) ), std::overflow_error);
 }
 
 BOOST_AUTO_TEST_CASE(it_should_generate_permutations)

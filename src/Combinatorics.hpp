@@ -14,17 +14,9 @@
 #include <iostream>
 #include <boost/foreach.hpp>
 #include <numeric/Twiddle.hpp>
+#include <boost/math/special_functions/binomial.hpp>
 
 namespace numeric {
-
-inline uint64_t factorial(uint32_t n)
-{
-    return (n == 1 || n == 0) ? 1 : factorial(n-1) * n;
-}
-
-// Compute the binomial coefficient
-// see http://de.wikipedia.org/wiki/Binomialkoeffizient for details
-uint64_t binomialCoefficient(uint32_t n, uint32_t k);
 
 /**
  * \brief Create permutation on a list of given types
@@ -87,7 +79,7 @@ public:
      * Get the total number of permutations
      * \return Number of permutations
      */
-    size_t numberOfPermutations() const { return factorial(mItems.size()); }
+    uint64_t numberOfPermutations() const { return static_cast<uint64_t>( boost::math::factorial<double>(mItems.size()) ); }
 };
 
 enum Mode { EXACT = 0, MAX, MIN };
@@ -271,21 +263,21 @@ public:
         return mCurrentDraw;
     }
 
-    uint32_t numberOfCombinations() const
+    uint64_t numberOfCombinations() const
     {
         uint32_t numberOfItems = mItems.size();
         switch(mMode)
         {
             case EXACT:
             {
-                return binomialCoefficient(numberOfItems, mSizeOfDraw);
+                return static_cast<uint64_t>( boost::math::binomial_coefficient<double>(numberOfItems, mSizeOfDraw) );
             }
             case MIN:
             {
                 uint32_t sum = 0;
                 for(uint32_t i = mSizeOfDraw; i <= mItems.size(); ++i)
                 {
-                    sum += binomialCoefficient(numberOfItems, i);
+                    sum += static_cast<uint64_t>( boost::math::binomial_coefficient<double>(numberOfItems, i) );
                 }
                 return sum;
             }
@@ -294,7 +286,7 @@ public:
                 uint32_t sum = 0;
                 for(uint32_t i = 1; i <= mSizeOfDraw; ++i)
                 {
-                    sum += binomialCoefficient(numberOfItems, i);
+                    sum += static_cast<uint64_t>( boost::math::binomial_coefficient<double>(numberOfItems, i) );
                 }
                 return sum;
             }
