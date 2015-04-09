@@ -26,8 +26,8 @@ namespace numeric {
  *  In this implementation, this initialisation is accomplished by calling
  *  inittwiddle(M, N, p), where p points to an array of N+2 ints.
  *
- *  Coded by Matthew Belmonte <mkb4@Cornell.edu>, 23 March 1996.  This
- *  implementation Copyright (c) 1996 by Matthew Belmonte.  Permission for use and
+ *  Coded by Matthew Belmonte <mkb4@Cornell.edu>, 23 March 1996
+ *  Copyright (c) 1996 by Matthew Belmonte.  Permission for use and
  *  distribution is hereby granted, subject to the restrictions that this
  *  copyright notice and reference list be included in its entirety, and that any
  *  and all changes made to the program be clearly noted in the program text.
