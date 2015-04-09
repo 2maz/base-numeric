@@ -67,7 +67,7 @@ class LimitedCombination
      * Map the internal combination to external types
      * \ŗeturn Combination of custom types
      */
-    std::vector<AtomType> mapToAtomTypes(const std::vector<CoreType>& combination)
+    std::vector<AtomType> mapToAtomTypes(const std::vector<CoreType>& combination) const
     {
         std::vector<AtomType> atomTypeList;
         std::vector<CoreType>::const_iterator cit = combination.begin();
@@ -119,7 +119,7 @@ public:
      * Get the current custom combination
      * \return current custom combination
      */
-    std::vector<AtomType> current()
+    std::vector<AtomType> current() const
     {
         std::vector<CoreType> current = mpItemCombinationGenerator->current();
         std::vector<AtomType> atomTypeList = mapToAtomTypes(current);
