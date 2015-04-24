@@ -77,6 +77,11 @@ std::ostream& operator<<(std::ostream& os, const std::vector< IntegerPartition >
 
 void IntegerPartitioning::compute(size_t number)
 {
+    if(number <= 0)
+    {
+        return;
+    }
+
     int n = number;
     std::vector<int> a;
     for(int i = 0; i <= n+1; ++i)

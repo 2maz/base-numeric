@@ -1,5 +1,5 @@
-#ifndef BASE_NUMERIC_INTEGER_PARTITIONING_HPP__
-#define BASE_NUMERIC_INTEGER_PARTITIONING_HPP__
+#ifndef __NUMERIC_INTEGER_PARTITIONING_HPP__
+#define __NUMERIC_INTEGER_PARTITIONING_HPP__
 
 #include <map>
 #include <set>
@@ -25,7 +25,7 @@ typedef std::vector<int> IntegerPartition;
  IntegerPartitioning ip;
  // compute all partitions: [1,1,1,1,1],[2,1,1,1], ... [5]
  ip.compute(5);
- PartitionsMap partitionsMap = ip.getPartitionsMap();
+ IntegerPartitioning::PartitionsMap partitionsMap = ip.getPartitionsMap();
  \endverbatim
  */
 class IntegerPartitioning
@@ -33,12 +33,11 @@ class IntegerPartitioning
 public:
     typedef std::map<size_t, std::set< IntegerPartition > > PartitionsMap;
 
-    PartitionsMap mPartitionsMap;
-
 public:
 
     /**
-     * Compute all integer partitions
+     * Compute all integer partitions up to a given size
+     * \param number
      * Generating All Partitions: A Comparison Of Two Encodings
      * Jerome Kelleher, Barry O'Sullivan
      *
@@ -76,10 +75,13 @@ public:
      */
     static size_t multiplicity(const IntegerPartition& partition, int value);
 
+private:
+    PartitionsMap mPartitionsMap;
+
 };
 
 std::ostream& operator<<(std::ostream& os, const IntegerPartition& list);
 std::ostream& operator<<(std::ostream& os, const std::vector<IntegerPartition>& list);
 
 } // end namespace numeric
-#endif // BASE_NUMERIC_INTEGER_PARTITIONING_HPP__
+#endif // __NUMERIC_INTEGER_PARTITIONING_HPP__
