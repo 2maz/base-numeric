@@ -1,5 +1,5 @@
-#ifndef BASE_NUMERIC_LIMITED_COMBINATION_HPP__
-#define BASE_NUMERIC_LIMITED_COMBINATION_HPP__
+#ifndef __NUMERIC_LIMITED_COMBINATION_HPP__
+#define __NUMERIC_LIMITED_COMBINATION_HPP__
 
 #include <map>
 #include <vector>
@@ -8,7 +8,13 @@
 namespace numeric {
 
 /**
- * \brief Compute combinatorics on a given set of limited but typed resources
+ * \brief Compute combinatorics on a given set of limited but typed resources,
+ * e.g. for available resource A:2, B:1, C:1 the following combinations are
+ * possible:
+ * max size 1: A,B,C
+ * max size 2: AA, AB, AC, BC
+ * max size 3: AAB, AAC, ABC
+ *
  *
  * Use integers to compute the core combinatorics, i.e. avoiding the 
  * computational effort for comparison of custom objects
@@ -16,9 +22,9 @@ namespace numeric {
  \verbatim
  using namespace numeric;
  std::map<std::string, size_t> items;
- items["item-1"] = 2;
- items["item-2"] = 2;
- items["item-3"] = 2;
+ items["A"] = 2;
+ items["B"] = 1;
+ items["C"] = 1;
 
  LimitedCombination<std::string> combinations(items, LimitedCombination<std::string>::totalNumberOfAtoms(items), MAX);
  do {
@@ -129,7 +135,7 @@ public:
 
     /**
      * Check if there is a next combination and 
-     * forward internal iterator, so that current allows
+     * forward internal iterator, so that current() allows
      * to retrieve this combination
      * \return true if there is another valid combination
      */
