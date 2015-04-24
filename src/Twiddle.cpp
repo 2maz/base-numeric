@@ -13,7 +13,7 @@ Twiddle::~Twiddle()
     delete[] b;
 }
 
-bool Twiddle::isActivePosition(size_t position)
+bool Twiddle::isActivePosition(size_t position) const
 {
     return b[position];
 }

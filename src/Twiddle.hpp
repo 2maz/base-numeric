@@ -1,3 +1,6 @@
+#ifndef __NUMERIC_TWIDDLE_HPP__
+#define __NUMERIC_TWIDDLE_HPP__
+
 #include <stdlib.h>
 
 namespace numeric {
@@ -126,7 +129,7 @@ public:
      * Check if the current position is active, i.e. belongs to the
      * current combination
      */
-    bool isActivePosition(size_t position);
+    bool isActivePosition(size_t position) const;
 
     /**
      * Initialize the algorithm
@@ -137,3 +140,4 @@ public:
 };
 
 } // end namespace numeric
+#endif // __NUMERIC_TWIDDLE_HPP__
