@@ -98,6 +98,10 @@ public:
         , mMode(mode)
     {
         size_t totalCount = totalNumberOfAtoms(mAtomTypeAvailablilityMap);
+        if(countMap.empty() || totalCount == 0)
+        {
+            throw std::invalid_argument("numeric::LimitedCombination no atoms to generate combination from -- check for empty map");
+        }
         if(mSize > totalCount)
         {
             mSize = totalCount;
